@@ -37,8 +37,14 @@ jobs:
           
   deploy-dev:
     needs: build
+    uses: leticiafaleia/pipeline_templates/.github/workflows/demo-deploy.yml@main
+    with:
+      variavel-demo: "Demo dev"
+
+  deploy-hml:
+    needs: build
     environment:
-      name: desenvolvimento
+      name: homologacao
     runs-on: ubuntu-latest
   
       # Steps represent a sequence of tasks that will be executed as part of the job
